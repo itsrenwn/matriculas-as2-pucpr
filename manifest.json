@@ -1,0 +1,18 @@
+{
+  "short_name": "Matrículas PUCPR",
+  "name": "Portal de Matrículas - PUCPR",
+  "description": "Aplicativo para envio e processamento de matrículas acadêmicas.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2247/2247726.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#121214",
+  "theme_color": "#004b87",
+  "display": "standalone",
+  "orientation": "portrait"
+}

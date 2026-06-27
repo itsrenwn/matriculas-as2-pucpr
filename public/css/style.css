@@ -1,0 +1,141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #a8a8b3;
+    font-size: 0.95rem;
+}
+
+
+.card {
+    background-color: #202024;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #29292e;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e1e1e6;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #121214;
+    border: 1px solid #29292e;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #004b87;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #121214;
+    border: 1px dashed #29292e;
+    border-radius: 4px;
+    color: #a8a8b3;
+    cursor: pointer;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #29292e;
+    margin: 24px 0;
+}
+
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #004b87;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #005ea8;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+
+.status-box {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.status-box.success {
+    background-color: #12a454;
+    color: #ffffff;
+}
+
+.status-box.error {
+    background-color: #e52e4d;
+    color: #ffffff;
+}
+
+.hidden {
+    display: none;
+}
