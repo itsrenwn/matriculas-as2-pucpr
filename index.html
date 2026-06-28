@@ -3,53 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Matrículas - PUCPR</title>
+    <title>Portal de Matrículas PUCPR</title>
+    <!-- Vinculando o CSS separado -->
     <link rel="stylesheet" href="public/css/style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#004b87">
 </head>
 <body>
 
-    <main class="container">
-        <header class="header">
-            <h1>Portal de Matrículas</h1>
-            <p>Envie seus dados para iniciar o fluxo de validação</p>
-        </header>
+    <h2>Portal de Matrículas</h2>
+    
+    <div class="container">
+        <!-- Menu de Navegação das Abas -->
+        <div class="tabs">
+            <button class="tab-btn active" id="btn-realizar">Realizar Matrícula</button>
+            <button class="tab-btn" id="btn-consultar">Consultar Matrícula</button>
+        </div>
 
-        <form id="form-matricula" class="card">
+        <!-- CONTEÚDO DA ABA 1: REALIZAR MATRÍCULA -->
+        <div id="realizar" class="tab-content active">
+            <form id="formMatricula">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="curso">Curso Desejado</label>
+                    <select id="curso" required>
+                        <option value="">Selecione um curso</option>
+                        <option value="Engenharia de Software">Engenharia de Software</option>
+                        <option value="Análise de Sistemas">Análise de Sistemas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comprovante">Comprovante de Pagamento (ID da Transação / PIX)</label>
+                    <input type="text" id="comprovante" required placeholder="Ex: TX123456789">
+                </div>
+                <div class="form-group">
+                    <label for="documento">Documento de Identidade (PDF ou Imagem)</label>
+                    <input type="file" id="documento" required>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Matrícula</button>
+            </form>
+            <div id="msgRealizar" class="notification success" style="display:none;"></div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA 2: CONSULTAR MATRÍCULA -->
+        <div id="consultar" class="tab-content">
             <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" required placeholder="Digite seu nome completo">
+                <label>Mural de Notificações - Matrículas Concluídas:</label>
             </div>
+    
+    <!-- Container onde o JS vai renderizar todas as notificações automaticamente -->
+        <div id="listaNotificacoes">
+            <div class="notification info">Carregando notificações dos servidores...</div>
+        </div>
+        </div>
 
-            <div class="form-group">
-                <label for="curso">Curso Desejado</label>
-                <select id="curso" required>
-                    <option value="" disabled selected>Selecione um curso</option>
-                    <option value="Engenharia de Software">Engenharia de Software</option>
-                    <option value="Ciência da Computação">Ciência da Computação</option>
-                    <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
-                </select>
-            </div>
-
-            <hr>
-
-            <div class="form-group">
-                <label for="comprovante-pagamento">Comprovante de Pagamento (ID da Transação / PIX)</label>
-                <input type="text" id="comprovante-pagamento" required placeholder="Ex: TX123456789">
-            </div>
-
-            <div class="form-group">
-                <label for="documento">Documento de Identidade (PDF ou Imagem)</label>
-                <input type="file" id="documento" accept="application/pdf, image/*" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Enviar Matrícula</button>
-        </form>
-
-        <div id="status-message" class="status-box hidden"></div>
-    </main>
-
+    <!-- Vinculando o JavaScript separado -->
     <script src="public/js/app.js"></script>
 </body>
 </html>

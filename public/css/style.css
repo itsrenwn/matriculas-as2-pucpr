@@ -1,51 +1,65 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background-color: #121212;
+    color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-body {
-    background-color: #121214;
-    color: #e1e1e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .container {
-    width: 100%;
-    max-width: 500px;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.header h1 {
-    color: #ffffff;
-    font-size: 2rem;
-    margin-bottom: 8px;
-}
-
-.header p {
-    color: #a8a8b3;
-    font-size: 0.95rem;
-}
-
-
-.card {
-    background-color: #202024;
+    background-color: #1e1e1e;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid #29292e;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* Abas de Navegação */
+.tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #888;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    color: #0066cc;
+    border-bottom: 3px solid #0066cc;
+}
+
+/* Controle de exibição das telas */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Formulários */
 .form-group {
     margin-bottom: 20px;
 }
@@ -53,89 +67,64 @@ body {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #e1e1e6;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 14px;
+    color: #cccccc;
 }
 
-input[type="text"],
-select {
+input, select {
     width: 100%;
     padding: 12px;
-    background-color: #121214;
-    border: 1px solid #29292e;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
     border-radius: 4px;
-    color: #ffffff;
-    font-size: 1rem;
-    transition: border-color 0.2s;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
-input[type="text"]:focus,
-select:focus {
+input:focus, select:focus {
     outline: none;
-    border-color: #004b87;
+    border-color: #0066cc;
 }
 
-input[type="file"] {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    background-color: #121214;
-    border: 1px dashed #29292e;
-    border-radius: 4px;
-    color: #a8a8b3;
-    cursor: pointer;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #29292e;
-    margin: 24px 0;
-}
-
-
-.btn-submit {
+.btn-primary {
     width: 100%;
     padding: 14px;
-    background-color: #004b87;
+    background-color: #0066cc;
     border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 1rem;
+    color: white;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.btn-submit:hover {
-    background-color: #005ea8;
-}
-
-.btn-submit:active {
-    transform: scale(0.98);
-}
-
-
-.status-box {
-    margin-top: 20px;
-    padding: 12px;
     border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0052a3;
+}
+
+/* Alertas de Feedback */
+.notification {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
     text-align: center;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 14px;
 }
 
-.status-box.success {
-    background-color: #12a454;
-    color: #ffffff;
+.success {
+    background-color: #10b981;
+    color: white;
 }
 
-.status-box.error {
-    background-color: #e52e4d;
-    color: #ffffff;
+.info {
+    background-color: #3b82f6;
+    color: white;
 }
 
-.hidden {
-    display: none;
+.error {
+    background-color: #ef4444; /* Cor vermelha para alertas de erro */
+    color: white;
 }
